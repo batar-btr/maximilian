@@ -6,7 +6,11 @@ import './NewExpense.css';
 const NewExpense = (props) => {
 
   const onAddExpenseHandler = (expense) => {
-    props.addNew(expense);
+    const newExpense = {
+      ...expense,
+      id: Math.random().toString()
+    }
+    props.addNew(newExpense)
   }
 
   return (
