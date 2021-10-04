@@ -3,10 +3,15 @@ import React from 'react';
 import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+
+  const onAddExpenseHandler = (expense) => {
+    props.addNew(expense);
+  }
+
   return (
     <div className='new-expense'>
-      <ExpenseForm />
+      <ExpenseForm onAddExpense={onAddExpenseHandler} />
     </div>
   );
 };

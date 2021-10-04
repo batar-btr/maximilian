@@ -4,6 +4,15 @@ import NewExpense from './components/NewExpense/NewExpense'
 import Expenses from './components/Expenses/Expenses';
 
 const App = () => {
+
+  const addNewExpense = expense => {
+    const newExpense = {
+      ...expense,
+      id: Math.random().toString()
+    }
+    console.log(newExpense)
+  }
+
   const expenses = [
     {
       id: 'e1',
@@ -35,7 +44,7 @@ const App = () => {
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense addNew={addNewExpense} />
       <Expenses items={expenses} />
     </div>
   );
