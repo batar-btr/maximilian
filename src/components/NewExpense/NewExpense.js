@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import ExpenseForm from './ExpenseForm';
+import Button from '../UI/Button'
 import './NewExpense.css';
 
 const NewExpense = (props) => {
@@ -20,7 +21,7 @@ const NewExpense = (props) => {
   }
 
   let content = showForm ?
-    <button onClick={buttonClickHandler}>New Expense</button> :
+    <Button onClick={buttonClickHandler}>New Expense</Button> :
     <ExpenseForm onAddExpense={onAddExpenseHandler} onCancelHandler={buttonClickHandler} />
 
   return (
